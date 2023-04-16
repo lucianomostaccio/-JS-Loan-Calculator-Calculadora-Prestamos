@@ -6,6 +6,7 @@ const montoPrestado = document.querySelector(".monto_prestamo");
 const total = document.querySelector(".prestamo_total");
 const interes = document.querySelector(".prestamo_tasa_interes");
 const submitBtn = document.querySelector(".calculadora-btn");
+let hola =
 
 // Evento de "click" al botón
 submitBtn.addEventListener("click", function () {
