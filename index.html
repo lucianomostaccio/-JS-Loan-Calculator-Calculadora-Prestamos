@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de préstamo con Javascript</title>
+
+    <!--Stylesheet & JS script-->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <main>
+    <body>
+      <section>
+        <div class="container">
+          <h2>Calculadora de préstamo</h2>
+          <span class="div-bar"></span>
+          <div class="calculadora">
+            <div class="calculadora-input">
+              <label for="">Monto del préstamo:</label>
+              <input type="number" id="monto_prestamo" />
+            </div>
+            <div class="calculadora-input">
+              <label for="">Duración (meses):</label>
+              <input type="number" id="duracion_prestamo" />
+            </div>
+            <div class="calculadora-input">
+              <label for="">CFT TEA (%):</label>
+              <small
+                >esta tasa de interés es el costo porcentual total anual del
+                préstamo</small
+              >
+              <input type="number" id="interes_prestamo" />
+            </div>
+            <div class="calculadora-input">
+              <button class="calculadora-btn">Calcular</button>
+            </div>
+          </div>
+
+          <div class="resultados_calculadora">
+            <!---Canvas-->
+            <canvas id="graficoPrestamo"></canvas>
+            <ul>
+              <li>Monto prestado: <span class="monto_prestamo"></span></li>
+              <li>
+                Cuota mensual del préstamo: <span class="prestamo_cuota"></span>
+              </li>
+              <li>
+                Monto de intereses: <span class="prestamo_tasa_interes"></span>
+              </li>
+              <li>
+                Monto total a pagar al terminar:
+                <span class="prestamo_total"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </body>
+  </main>
+  <script src="./app.js"></script>
+</html>
