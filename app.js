@@ -6,7 +6,6 @@ const montoPrestado = document.querySelector(".monto_prestamo");
 const total = document.querySelector(".prestamo_total");
 const interes = document.querySelector(".prestamo_tasa_interes");
 const submitBtn = document.querySelector(".calculadora-btn");
-let hola =
 
 // Evento de "click" al botón
 submitBtn.addEventListener("click", function () {
@@ -88,21 +87,3 @@ submitBtn.addEventListener("click", function () {
     });
   }
 });
-
-// Obtener los valores de los inputs y convertirlos a número
-//   let monto = parseFloat(montoPrestamo.value);
-//   let plazo = parseFloat(duracion.value);
-//   let tasaAnual = parseFloat(tasa.value);
-
-// Validar que los valores sean válidos
-//   if (
-//     !monto ||
-//     !plazo ||
-//     !tasaAnual ||
-//     monto <= 0 ||
-//     plazo <= 0 ||
-//     tasaAnual <= 0
-//   ) {
-//     alert(`Tanto el monto, el plazo y la tasa deben ser mayores a cero.`);
-//     return;
-//   }

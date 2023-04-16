@@ -5,8 +5,12 @@
   box-sizing: border-box;
 }
 
-section {
+main {
   background: #961251;
+  min-height: 100vh;
+}
+
+section {
   font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
@@ -15,13 +19,13 @@ section {
 
 .container {
   width: 40vw;
-  height: 50rem;
+  height: auto;
   background: #ffffff;
   padding: 20px 25px;
   border-radius: 10px;
   box-shadow: 0 0 60px rgba(1, 0, 5, 0.15);
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .container h2 {
@@ -94,7 +98,6 @@ section {
   border-radius: 4px;
 }
 
-/*chrome, safari, edge, opera*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -125,14 +128,15 @@ input[type="number"] {
   font-size: 18px;
 }
 
-.resultados_calculadora .loan_emi {
+.resultados_calculadora .prestamo_cuota,
+.resultados_calculadora .prestamo_total {
   font-weight: 700;
   font-size: 22px;
   color: #961251;
 }
-.resultados_calculadora .loan_principle,
-.resultados_calculadora .loan_interest_rate,
-.resultados_calculadora .loan_total {
+
+.resultados_calculadora .monto_prestamo,
+.resultados_calculadora .prestamo_tasa_interes {
   color: #333332;
   font-weight: 700;
   font-size: 22px;
@@ -140,4 +144,27 @@ input[type="number"] {
 
 .resultados_calculadora canvas {
   padding: 20px;
+}
+
+footer {
+  background: black;
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Estilos para el footer en pantallas grandes */
+@media only screen and (min-width: 1200px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
 }
