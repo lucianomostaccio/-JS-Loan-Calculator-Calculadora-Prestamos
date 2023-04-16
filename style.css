@@ -164,7 +164,7 @@ footer a {
 /* Estilos para el footer en pantallas grandes */
 @media only screen and (min-width: 1200px) {
   footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
   }
 }
