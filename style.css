@@ -100,7 +100,6 @@ section {
 
 .calculadora .buscar_limpiar {
   display: flex;
-  width: 98%;
   justify-content: space-around;
 }
 
@@ -116,6 +115,7 @@ section {
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 4px;
+  display: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -149,14 +149,14 @@ input[type="number"] {
 }
 
 .resultados_calculadora .prestamo_cuota,
-.resultados_calculadora .prestamo_total {
+.resultados_calculadora .prestamo_total,
+.resultados_calculadora .prestamo_tasa_interes {
   font-weight: 700;
   font-size: 22px;
   color: #961251;
 }
 
-.resultados_calculadora .monto_prestamo,
-.resultados_calculadora .prestamo_tasa_interes {
+.resultados_calculadora .monto_prestamo {
   color: #333332;
   font-weight: 700;
   font-size: 22px;

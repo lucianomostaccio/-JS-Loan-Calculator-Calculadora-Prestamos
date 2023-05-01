@@ -48,6 +48,10 @@ submitBtn.addEventListener("click", function () {
 
   // Si los inputs son válidos...
   if (inputsValidos) {
+    const textoHistorial = document.querySelector("#textoHistorial");
+    textoHistorial.style.display = "none";
+    buscarBtn.style.display = "block";
+
     // Cálculo de la tasa mensual
     let tasaMensual = tasaAnual / 1200;
 
@@ -92,11 +96,11 @@ submitBtn.addEventListener("click", function () {
     // Crear objeto con datos del préstamo para almacenar
     const prestamo = {
       monto: monto.toFixed(2),
-      duracion: plazo,
+      duración: plazo,
       tasa: tasaAnual.toFixed(2),
       cuota: cuotaMensual.toFixed(2),
-      totalPago: totalPago.toFixed(2),
-      totalInteres: totalInteres.toFixed(2),
+      Pago_total: totalPago.toFixed(2),
+      Interes_total: totalInteres.toFixed(2),
     };
 
     // Almacenar objeto en array
@@ -116,7 +120,7 @@ submitBtn.addEventListener("click", function () {
 
     buscarBtn.addEventListener("click", function () {
       const palabraClave = prompt(
-        "Ingrese una palabra clave para buscar préstamos:"
+        "Ingrese un monto, una duración, una tasa, una cuota, o un monto de interés total para buscar préstamos en el historial:"
       );
 
       // Filtrar préstamos que coinciden con la palabra clave
@@ -149,5 +153,7 @@ submitBtn.addEventListener("click", function () {
     //   const limpiarGrafico = document.querySelector("#graficoPrestamo");
     //   limpiarGrafico.style.display = "none"; // borrar gráfico de torta
     // });
+
+    //CONSULTAR A CODERASK POR QUE EL PROMPT DE BUSQUEDA SE EJECUTA UNA VEZ POR CANTIDAD DE ELEMENTOS ALMACENADOS EN EL ARRAY, EN VEZ DE SOLO UNA VEZ AL HACER CLICK
   }
 });
