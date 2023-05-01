@@ -1,11 +1,15 @@
-const montoPrestamo = document.getElementById("monto_prestamo");
-const duracion = document.getElementById("duracion_prestamo");
-const tasa = document.getElementById("interes_prestamo");
+const montoPrestamo = document.querySelector("#monto_prestamo");
+const duracion = document.querySelector("#duracion_prestamo");
+const tasa = document.querySelector("#interes_prestamo");
 const cuota = document.querySelector(".prestamo_cuota");
 const montoPrestado = document.querySelector(".monto_prestamo");
 const total = document.querySelector(".prestamo_total");
 const interes = document.querySelector(".prestamo_tasa_interes");
 const submitBtn = document.querySelector(".calculadora-btn");
+const buscarBtn = document.querySelector("#buscarBtn");
+const limpiarBtn = document.querySelector("#limpiarBtn");
+
+const historialPrestamos = []; // crear array para almacenar los préstamos
 
 // Evento de "click" al botón
 submitBtn.addEventListener("click", function () {
@@ -42,7 +46,7 @@ submitBtn.addEventListener("click", function () {
     }
   }
 
-  // Condición para verificar si los inputs son válidos
+  // Si los inputs son válidos...
   if (inputsValidos) {
     // Cálculo de la tasa mensual
     let tasaMensual = tasaAnual / 1200;
@@ -85,5 +89,65 @@ submitBtn.addEventListener("click", function () {
         },
       },
     });
+    // Crear objeto con datos del préstamo para almacenar
+    const prestamo = {
+      monto: monto.toFixed(2),
+      duracion: plazo,
+      tasa: tasaAnual.toFixed(2),
+      cuota: cuotaMensual.toFixed(2),
+      totalPago: totalPago.toFixed(2),
+      totalInteres: totalInteres.toFixed(2),
+    };
+
+    // Almacenar objeto en array
+    historialPrestamos.push(prestamo);
+
+    // Limpiar campos de entrada
+    montoPrestamo.value = "";
+    duracion.value = "";
+    tasa.value = "";
+
+    // Mostrar mensaje de éxito
+    alert(
+      "Préstamo almacenado en el historial de préstamos calculados (VER CONSOLA)"
+    );
+    // Mostrar array en consola
+    console.log("Historial de préstamos calculados:", historialPrestamos);
+
+    buscarBtn.addEventListener("click", function () {
+      const palabraClave = prompt(
+        "Ingrese una palabra clave para buscar préstamos:"
+      );
+
+      // Filtrar préstamos que coinciden con la palabra clave
+      const prestamosCoincidentes = historialPrestamos.filter(function (
+        prestamo
+      ) {
+        const valoresPrestamo = Object.values(prestamo);
+        return valoresPrestamo.some(function (valor) {
+          return valor
+            .toString()
+            .toLowerCase()
+            .includes(palabraClave.toLowerCase());
+        });
+      });
+
+      alert("Ver resultados de búsqueda en consola");
+      // Mostrar resultados en la consola
+      console.log(
+        `Se encontraron ${prestamosCoincidentes.length} préstamos que coinciden con "${palabraClave}":`
+      );
+      console.table(prestamosCoincidentes);
+    });
+
+    //botón limpiar resultados gráfico
+    // limpiarBtn.addEventListener("click", function () {
+    //   cuota.innerHTML = "";
+    //   montoPrestado.innerHTML = "";
+    //   total.innerHTML = "";
+    //   interes.innerHTML = "";
+    //   const limpiarGrafico = document.querySelector("#graficoPrestamo");
+    //   limpiarGrafico.style.display = "none"; // borrar gráfico de torta
+    // });
   }
 });

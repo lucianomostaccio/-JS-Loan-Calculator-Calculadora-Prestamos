@@ -98,6 +98,26 @@ section {
   border-radius: 4px;
 }
 
+.calculadora .buscar_limpiar {
+  display: flex;
+  width: 98%;
+  justify-content: space-around;
+}
+
+.calculadora .buscar_limpiar button {
+  padding: 14px 16px;
+  margin-top: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  background: #961251;
+  border: 0;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
