@@ -131,8 +131,7 @@ submitBtn.addEventListener("click", function () {
         return valoresPrestamo.some(function (valor) {
           return valor
             .toString()
-            .toLowerCase()
-            .includes(palabraClave.toLowerCase());
+            .includes(palabraClave);
         });
       });
 
@@ -143,7 +142,10 @@ submitBtn.addEventListener("click", function () {
       );
       console.table(prestamosCoincidentes);
     });
+  }
+});
 
+//CÓDIGO DE PRUEBA:
     //botón limpiar resultados gráfico
     // limpiarBtn.addEventListener("click", function () {
     //   cuota.innerHTML = "";
@@ -153,7 +155,3 @@ submitBtn.addEventListener("click", function () {
     //   const limpiarGrafico = document.querySelector("#graficoPrestamo");
     //   limpiarGrafico.style.display = "none"; // borrar gráfico de torta
     // });
-
-    //CONSULTAR A CODERASK POR QUE EL PROMPT DE BUSQUEDA SE EJECUTA UNA VEZ POR CANTIDAD DE ELEMENTOS ALMACENADOS EN EL ARRAY, EN VEZ DE SOLO UNA VEZ AL HACER CLICK
-  }
-});
